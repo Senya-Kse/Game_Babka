@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background: #1a0f0a;
+    font-family: 'Georgia', serif;
+    color: #f4e4c1;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(20, 10, 5, 0.85);
+    padding: 20px;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.overlay h1 {
+    font-size: clamp(1.4rem, 5vw, 2.6rem);
+    color: #ffcc66;
+    text-shadow: 3px 3px 0 #8b0000, 0 0 20px rgba(255, 100, 0, 0.6);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.overlay h2 {
+    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    color: #ff4444;
+    text-shadow: 3px 3px 0 #000;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    margin: 10px 0;
+}
+
+.hint {
+    color: #ddd;
+    font-style: italic;
+}
+
+.small {
+    font-size: 0.85rem !important;
+    color: #aaa;
+    margin-top: 20px !important;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: bold;
+    background: linear-gradient(180deg, #d4a017, #8b4513);
+    color: #fff;
+    border: 3px solid #4a2000;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 0 #000;
+    box-shadow: 0 6px 0 #4a2000, 0 10px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #4a2000, 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#finalScore {
+    color: #ffcc66;
+    font-size: 1.6em;
+    font-weight: bold;
+}
